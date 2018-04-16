@@ -1,5 +1,6 @@
+
 module.exports = {
-    bar: {
+    line: {
       chart: {
               type:'line'//指定图表的类型，默认是折线图（line）
               },
@@ -44,5 +45,47 @@ module.exports = {
                         name: 'Other',
                         data: [12908, 5948, 8105, 11248, 8989, 11816, 18274, 18111]
                     }],
+    },
+    bar: {
+    
+          title:{
+              text:'某网站上各浏览器的访问量'
+          },
+          type:"bar",
+          tooltip:{
+             headerFormat:`{series.name}<br>`,
+             pointFormat:`{point.name}:<b>{point.percentage:.1f}%</b>`
+         },
+         plotOptions: {
+             pie:{
+                 allowPointSelect:true,
+                 cursor:'pointer',
+                 dataLabels:{
+                     enabled:true,
+                    //  style:{
+                    //      color:(highCharts.theme&&HighCharts.theme.contrastTextColor) || 'black'
+                    //  }
+                 }
+             }
+         },
+         series:[{
+             type:'pie',
+             name:'浏览器访问量占比',
+             data:[
+                 ["火狐浏览器" , 25.0],
+                 ["IE浏览器" , 10.0],
+                 ["谷歌浏览器" ,40.0],
+                 ["欧朋浏览器" , 5.0],
+                 {
+                     name:"其他",
+                     y:0.7,
+                     sliced:true,
+                     selected:true
+                 }
+             ]
+
+         }]
+           
+      }
     }
-  }
+  

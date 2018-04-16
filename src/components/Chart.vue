@@ -32,8 +32,9 @@ export default {
 
 <style lang="less">
   .container {
-width: 80%;
-height: 100%;
+width: 100%;
+height: 400px;
 margin: 40px auto;
+
 }
 </style>

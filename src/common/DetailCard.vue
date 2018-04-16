@@ -1,6 +1,6 @@
 <template>
     <div class="detail-card-list">
-        <template  v-for="(item,index) of listData" >
+        <template  v-for="(item,index) in listData"  >
             <div class="detail-card-content">
                   <div class="detail-top">
              <p class="detail-type">{{item.type}}</p>

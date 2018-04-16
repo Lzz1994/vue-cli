@@ -1,8 +1,8 @@
 <template>
      
    <p class="chartAnalyse">
-
-  <Chart :id="id" :option="option"></Chart>
+     <Chart :id="id" :option="option"></Chart>
+    
   </p>
 </template>
 
@@ -13,23 +13,27 @@ import Chart from "./Chart.vue";
 import options from "../chart-options/option";
 export default {
   data() {
-    let option = options.bar;
+    let option = options.line;
     return {
-      id: "test",
+      id: "line",
       option: option
-    }
+    };
   },
   components: {
     Chart
-  },
-
+  }
 };
-</script lang="less">
-#test {
-  width: 80%;
-  height: 100%;
-  margin: 40px auto;
-}
+</script>
+
 <style lang="less">
+  .chartAnalyse{
+      width: 100%;
+      height: 100%; 
+      #line{
+          width: 100%;
+          height: 100%;
+          border: 1px solid #ccc;
+      }
+  }
 
 </style>

@@ -11,19 +11,23 @@
              <router-link to="/DicManager">词库总览</router-link>
              </el-menu-item>
            <el-menu-item index="2">
-             <router-link to="/chart">图表分析</router-link>
+             <router-link to="/chartAll">图表分析</router-link>
              </el-menu-item>
-           <el-menu-item index="3">运行监控</el-menu-item>
-           <el-menu-item index="4">权限管理</el-menu-item>
-           <el-menu-item index="5">审核更新</el-menu-item>
+           <el-menu-item index="3">啦啦啦</el-menu-item>
+           <el-menu-item index="4">
+              <router-link to="/form"> 表单练习</router-link>
+          </el-menu-item>
       </el-menu>
     </div>
   </el-col>
   <el-col :span="4">
         <div class="header-search">
           <el-input
-            placeholder="请输入内容">
-          <i slot="prefix" class="el-input__icon el-icon-search"></i>
+            placeholder="请输入内容" 
+            v-model="input"
+            @blur="searchkey"
+            >
+          <i slot="suffix" class="el-input__icon el-icon-search"></i>
           </el-input>
       </div>
   </el-col>
@@ -38,12 +42,15 @@ export default {
   data() {
     return {
       activeIndex: "1",
-      input: ""
+      input: "",
     };
   },
   methods: {
     handleSelect(key, keyPath) {
       console.log(key, keyPath);
+    },
+    searchkey:function(){
+      alert("查找关键词"+this.input)
     }
   }
 };
@@ -71,8 +78,8 @@ export default {
         font-size: 18px;
         color: #ffffff;
         line-height: 64px;
-        a{
-        text-decoration: none;
+        a {
+          text-decoration: none;
         }
         &.is-active {
           color: #33c3f0;
@@ -87,9 +94,9 @@ export default {
 
   .header-search {
     height: 64px;
-    .el-input--prefix {
-     margin-top: 13px;
-   }
+    .el-input--suffix {
+      margin-top: 13px;
+    }
   }
-}
+ }
 </style>
